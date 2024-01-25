@@ -4,9 +4,9 @@ import axios from 'axios';
 import LineChart from './Graphique/LineChart';
 import BarChart from './Graphique/BarChart';
 import PriceChart from './Graphique/PriceChart';
-import MessageTicker from './composant/MessageTicker';
-import Header from './composant/Header';
-import Footer from './composant/Footer';
+import MessageTicker from './MessageTicker';
+import Header from './Header';
+import Footer from './Footer';
 import './StyleCss/MainPanel.css';
 
 // Cette fonction pourrait être utilisée pour transformer vos données d'actions en données de graphique
