@@ -55,29 +55,37 @@ const MainPanel = () => {
   });
 
   useEffect(() => {
-    axios.get('http://localhost:3000/actions')
-      .then(response => {
-        const transformedData = transformerActionsEnDonneesDeGraphique(response.data);
-        setLineChartData(currentData => ({
-          ...currentData,
-          labels: transformedData.labels,
-          datasets: currentData.datasets.map(dataset => ({
-            ...dataset,
-            data: transformedData.data
-          }))
-        }));
-        setBarChartData(currentData => ({
-          ...currentData,
-          labels: transformedData.labels,
-          datasets: currentData.datasets.map(dataset => ({
-            ...dataset,
-            data: transformedData.data
-          }))
-        }));
-      })
-      .catch(error => {
-        console.error("Erreur lors du chargement des données", error);
-      });
+    const recupererDonneesActions = () => {
+      axios.get('http://localhost:3000/actions')
+        .then(response => {
+          const transformedData = transformerActionsEnDonneesDeGraphique(response.data);
+          setLineChartData(currentData => ({
+            ...currentData,
+            labels: transformedData.labels,
+            datasets: currentData.datasets.map(dataset => ({
+              ...dataset,
+              data: transformedData.data
+            }))
+          }));
+          setBarChartData(currentData => ({
+            ...currentData,
+            labels: transformedData.labels,
+            datasets: currentData.datasets.map(dataset => ({
+              ...dataset,
+              data: transformedData.data
+            }))
+          }));
+        })
+        .catch(error => {
+          console.error("Erreur lors du chargement des données", error);
+        });
+    };
+  
+    // Exécuter immédiatement une fois et ensuite toutes les 5 secondes
+    recupererDonneesActions();
+    const intervalId = setInterval(recupererDonneesActions, 5000);
+  
+    return () => clearInterval(intervalId); // Nettoyer l'intervalle lors du démontage du composant
   }, []);
 
   // Options pour le graphique en ligne
