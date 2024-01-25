@@ -4,6 +4,7 @@ import axios from 'axios';
 import LineChart from './Graphique/LineChart';
 import BarChart from './Graphique/BarChart';
 import PriceChart from './Graphique/PriceChart';
+import Footer from './Footer';
 import './StyleCss/MainPanel.css';
 
 // Cette fonction pourrait être utilisée pour transformer vos données d'actions en données de graphique
@@ -106,6 +107,7 @@ const MainPanel = () => {
       {priceChartData.datasets[0].data.length > 0 && (
         <PriceChart data={priceChartData} />
       )}
+      <Footer />
     </div>
   );
 }
