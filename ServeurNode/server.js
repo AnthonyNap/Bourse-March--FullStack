@@ -39,8 +39,8 @@ app.delete('/actions/:id', (req, res) => {
   
 // Fonction pour ajuster le prix d'une action de manière aléatoire
 function ajusterPrixAction(action) {
-    const pourcentageDeVariation = 0.20; // 10% de variation
-    const variation = action.prix * pourcentageDeVariation * (Math.random() - 0.20) * 2;
+    const pourcentageDeVariation = 0.10; // 10% de variation
+    const variation = action.prix * pourcentageDeVariation * (Math.random() - 0.10) * 2;
     action.prix = Math.max(0, action.prix + variation);
   }
   
