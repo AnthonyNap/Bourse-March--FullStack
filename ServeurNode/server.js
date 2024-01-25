@@ -39,8 +39,8 @@ app.delete('/actions/:id', (req, res) => {
   
 // Fonction pour ajuster le prix d'une action de manière aléatoire
 function ajusterPrixAction(action) {
-    const pourcentageDeVariation = 0.05; // 5% de variation
-    const variation = action.prix * pourcentageDeVariation * (Math.random() - 0.5) * 2;
+    const pourcentageDeVariation = 0.20; // 10% de variation
+    const variation = action.prix * pourcentageDeVariation * (Math.random() - 0.20) * 2;
     action.prix = Math.max(0, action.prix + variation);
   }
   
@@ -50,7 +50,7 @@ function ajusterPrixAction(action) {
   }
   
   // Exécuter la mise à jour des prix toutes les 5 secondes
-  setInterval(miseAJourPrixActions, 5000);
+  setInterval(miseAJourPrixActions, 4000);
   
 
 // Route pour mettre à jour le prix d'une action
