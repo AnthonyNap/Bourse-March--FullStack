@@ -10,7 +10,7 @@
 .message-ticker span {
     display: inline-block;
     padding-right: 50px;
-    animation: ticker 25s linear infinite;
+    animation: ticker 35s linear infinite;
 }
 
 @keyframes ticker {
