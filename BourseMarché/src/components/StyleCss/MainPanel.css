@@ -1,0 +1,39 @@
+/* StyleCss/MainPanel.css */
+.main-panel {
+    padding: 50px;
+    margin-left: 250px; /* La même que la largeur de la sidebar */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: calc(100% - 250px); /* Ajustez la largeur en fonction de la sidebar */
+  }
+  
+  .chart-container {
+    width: calc(100% - 40px);
+    max-width: 600px;
+    margin: 20px auto; /* Centrer les graphiques horizontalement */
+  }
+  
+  .main-content {
+    padding-top: 70px; /* Ajustez cette valeur si nécessaire */
+  }
+
+  /* Utilisation de media queries pour un design réactif */
+  @media (min-width: 768px) {
+    .main-panel {
+      flex-direction: row; /* Disposition horizontale pour les écrans plus larges */
+      flex-wrap: wrap; /* Permet aux graphiques de passer à la ligne suivante si nécessaire */
+      justify-content: space-around; /* Répartit l'espace autour des éléments */
+    }
+  
+    .chart-container {
+      width: calc(50% - 40px); /* Prend la moitié de la largeur de l'écran moins le padding */
+      margin: 20px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .chart-container {
+      width: calc(33% - 40px); /* Trois graphiques par ligne sur les grands écrans */
+    }
+  }

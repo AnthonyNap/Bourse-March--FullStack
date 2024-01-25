@@ -1,0 +1,57 @@
+/* /src/components/StyleCss/Navbar.css */
+.navbar {
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 250px; /* Assurez-vous que cela correspond à la largeur de la sidebar */
+    width: calc(100% - 250px); /* Corrigez la faute de frappe ici */
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Utilisez toute la largeur de la navbar */
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-search input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd; /* Bordure subtile pour l'input */
+  }
+  
+  .navbar-items {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-item {
+    padding: 0.5rem 0.75rem;
+    margin-left: 20px; /* Espace entre les éléments */
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-item:hover {
+    background-color: #555; /* Effet de survol pour les items */
+  }
+  
+  /* N'oubliez pas d'ajouter un padding-top au corps principal pour éviter que le contenu ne soit caché sous la navbar */
+  .body-content {
+    padding-top: 65px; /* Ajustez cette valeur en fonction de la hauteur de votre navbar */
+  }
+  

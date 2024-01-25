@@ -1,0 +1,100 @@
+/* App.css */
+
+/* Importation de la police depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Palette de couleurs */
+:root {
+  --primary-color: #2c3e50; /* Bleu foncé */
+  --secondary-color: #2f3031; /* Black */
+  --background-color: #ecf0f1; /* Blanc cassé */
+  --font-color: #333; /* Gris foncé */
+  --border-color: #ddd; /* Gris clair */
+}
+
+/* Application des couleurs de base */
+body, html {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Cartes de graphiques */
+.chart-container {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--primary-color);
+  /* autres styles de sidebar */
+}
+
+/* Typographie */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+  color: white;
+}
+
+h1 {
+  font-size: 2.5rem; /* 40px si 1rem = 16px */
+  font-weight: 700; /* gras */
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700;
+}
+
+p {
+  font-size: 1rem; /* 16px */
+  color: var(--font-color);
+  line-height: 1.6; /* Espacement des lignes pour la lisibilité */
+}
+
+/* Liens et éléments interactifs */
+a, .nav-item, .navbar-item {
+  font-size: 1rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease; /* Transition douce pour les survols */
+  color: white;
+}
+
+.nav-item:hover, .navbar-item:hover {
+  color: #341e3d; /* Couleur lors du survol */
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--secondary-color);
+  /* autres styles de navbar */
+}
+
+/* Vous pouvez également ajouter des transitions douces pour les hover */
+.nav-item:hover, .navbar-item:hover {
+  background-color: darken(var(--primary-color), 10%);
+  transition: background-color 0.5s;
+}
+
+/* Pour une meilleure lisibilité et espacement */
+* {
+  line-height: 1.6; /* Plus d'espace entre les lignes de texte */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Espace autour des éléments */
+.container {
+  padding: 20px;
+}

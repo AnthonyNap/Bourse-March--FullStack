@@ -1,0 +1,56 @@
+/* /src/components/StyleCss/Sidebar.css */
+.sidebar {
+    background-color: #9c27b0;
+    width: 250px;
+    height: 100vh;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Assurez-vous que la sidebar est au-dessus de la navbar si elles se chevauchent */
+    overflow-y: auto;
+  }
+  
+  .sidebar .nav {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar .nav-item {
+    padding: 15px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar .nav-item:hover,
+  .sidebar .nav-item:focus,
+  .sidebar .nav-item.active {
+    background-color: #a333c8;
+  }
+  
+  /* Styles pour les icônes */
+  .sidebar .nav-icon {
+    margin-right: 10px;
+  }
+  
+  /* Media queries pour une conception réactive */
+  @media (max-width: 768px) {
+    .sidebar {
+      min-width: 0;
+      width: 100%;
+      height: auto;
+      position: relative; /* La sidebar n'est plus fixe */
+    }
+    
+    .sidebar .nav-item {
+      text-align: center;
+    }
+  }
+  
+ 
+  
