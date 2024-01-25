@@ -4,6 +4,7 @@ import axios from 'axios';
 import LineChart from './Graphique/LineChart';
 import BarChart from './Graphique/BarChart';
 import PriceChart from './Graphique/PriceChart';
+import MessageTicker from './MessageTicker';
 import Header from './Header';
 import Footer from './Footer';
 import './StyleCss/MainPanel.css';
@@ -99,6 +100,7 @@ const MainPanel = () => {
 
   return (
     <div className="main-panel">
+      <MessageTicker />
       <Header />
       {lineChartData.datasets[0].data.length > 0 && (
         <LineChart data={lineChartData} options={lineChartOptions} />
