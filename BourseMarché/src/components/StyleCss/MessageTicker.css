@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
 .message-ticker {
     width: 100%;
     white-space: nowrap;
@@ -9,11 +11,28 @@
 
 .message-ticker span {
     display: inline-block;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
     padding-right: 50px;
-    animation: ticker 35s linear infinite;
+    animation: ticker 45s linear infinite;
 }
 
 @keyframes ticker {
-    0% { transform: translate3d(100%, 0, 0);}
-    100% {transform: translate3d(-100%, 0, 0); }
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-180%);
+        opacity: 0;
+    }
 }
