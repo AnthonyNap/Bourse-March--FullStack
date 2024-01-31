@@ -34,3 +34,4 @@ Technologies Utilisées
     Frontend : React.js
     Bibliothèques : Axios, Chart.js
 	
+Par Nap.
