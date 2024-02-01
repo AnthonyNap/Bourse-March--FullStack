@@ -11,7 +11,7 @@ let actions = [
     { id: 3, nom: 'EcoEnergy', prix: 120 },
     { id: 4, nom: 'BourseSaa', prix: 180 },
     { id: 5, nom: 'PlanCript', prix: 200 },
-    // Ajoutez plus d'actions ici
+    // Ajoutez plus d'actions ici...
   ];
 
 app.use(cors());
