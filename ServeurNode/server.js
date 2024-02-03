@@ -24,10 +24,13 @@ app.get('/actions', (req, res) => {
 
 // Route pour Ajouter une action  
 app.post('/actions', (req, res) => {
-    const nouvelleAction = { id: actions.length + 1, ...req.body };
-    actions.push(nouvelleAction);
-    res.status(201).json(nouvelleAction);
-  });
+  if (!req.body.nom || req.body.prix == null) {
+      return res.status(400).send('Les données de la nouvelle action sont incomplètes.');
+  }
+  const nouvelleAction = { id: actions.length + 1, nom: req.body.nom, prix: req.body.prix };
+  actions.push(nouvelleAction);
+  res.status(201).json(nouvelleAction);
+});
 
 // Route pour supprimer une action 
 app.delete('/actions/:id', (req, res) => {
@@ -55,21 +58,20 @@ function ajusterPrixAction(action) {
 
 // Route pour mettre à jour le prix d'une action
 app.put('/actions/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const nouveauPrix = req.body.prix;
+  const id = parseInt(req.params.id);
+  const nouveauPrix = parseFloat(req.body.prix);
 
-    let action = actions.find(action => action.id === id);
+  if (isNaN(nouveauPrix) || nouveauPrix <= 0) {
+      return res.status(400).send('Le prix doit être un nombre valide et supérieur à 0.');
+  }
 
-    if (!action) {
-        return res.status(404).send('Action non trouvée');
-    }
+  let action = actions.find(action => action.id === id);
+  if (!action) {
+      return res.status(404).send('Action non trouvée.');
+  }
 
-    if (!nouveauPrix) {
-        return res.status(400).send('Le prix est requis');
-    }
-
-    action.prix = nouveauPrix;
-    res.json(action);
+  action.prix = nouveauPrix;
+  res.json(action);
 });
 
 // Gestion des erreurs 404 pour les routes non définies
